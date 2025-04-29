@@ -107,7 +107,7 @@ void updateControl() {
       receivingNumber = false;
 
       unsigned long currentTime = millis();
-      if (currentTime - lastSendTime > 50) { // 50ms interval
+      if (currentTime - lastSendTime > 50) { 
         for (int i = 0; i < numReceivers; i++) {
           esp_err_t result = esp_now_send(broadcastAddresses[i], (uint8_t *)&myData, sizeof(myData));
           if (result != ESP_OK) {
